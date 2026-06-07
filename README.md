@@ -110,6 +110,24 @@ The app uses `output: "export"`, so Vercel serves it as a static browser app whi
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 7. Deploy.
 
+## Cloudflare Workers Static Assets Deployment
+
+If the project is created under Workers Builds instead of Pages, use the included
+`wrangler.jsonc`.
+
+Recommended settings:
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Root directory: `/`
+- Node version: provided by `.node-version` as `22.16.0`
+- Build variables:
+  - `NEXT_PUBLIC_SUPABASE_URL`
+  - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+
+The Worker name in `wrangler.jsonc` is `dashboardconsumerkcss` and should match the
+Cloudflare Worker service name.
+
 ## Demo User Flow
 
 1. Open Dashboard to review KPI cards and issue charts.
