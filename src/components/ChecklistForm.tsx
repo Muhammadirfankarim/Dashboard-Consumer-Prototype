@@ -68,12 +68,17 @@ function criticalFailed(run: ChecklistRun) {
   });
 }
 
+function affectsChecklistResult(key: keyof ChecklistRun) {
+  return key === "product" || key === "phone_number" || checklistItems.some((item) => item.key === key);
+}
+
 export function ChecklistForm() {
   const { checklistRuns, createChecklistRun, createCaseFromChecklist } = useData();
   const { role } = useRole();
   const [form, setForm] = useState<ChecklistRun>(defaultChecklist());
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
+  const [showResultNotice, setShowResultNotice] = useState(false);
   const normalizedPhone = normalizePhone(form.phone_number);
   const phoneSuggestion =
     form.phone_number?.replace(/\D/g, "").startsWith("62") && normalizedPhone
@@ -85,6 +90,7 @@ export function ChecklistForm() {
 
   const update = <K extends keyof ChecklistRun>(key: K, value: ChecklistRun[K]) => {
     setForm((current) => ({ ...current, [key]: value }));
+    if (affectsChecklistResult(key)) setShowResultNotice(true);
   };
 
   const prepare = () => {
@@ -104,10 +110,14 @@ export function ChecklistForm() {
       setErrors(zodErrorsToRecord(parsed.error));
       return;
     }
+    setShowResultNotice(true);
     setErrors({});
     setSaving(true);
     const saved = await createChecklistRun(parsed.data as ChecklistRun, role);
-    if (saved) setForm(defaultChecklist());
+    if (saved) {
+      setForm(defaultChecklist());
+      setShowResultNotice(false);
+    }
     setSaving(false);
   };
 
@@ -118,9 +128,13 @@ export function ChecklistForm() {
       setErrors(zodErrorsToRecord(parsed.error));
       return;
     }
+    setShowResultNotice(true);
     setSaving(true);
     const result = await createCaseFromChecklist(parsed.data as ChecklistRun, role);
-    if (result.caseData) setForm(defaultChecklist());
+    if (result.caseData) {
+      setForm(defaultChecklist());
+      setShowResultNotice(false);
+    }
     setSaving(false);
   };
 
@@ -238,16 +252,18 @@ export function ChecklistForm() {
           />
         </label>
 
-        {failedCritical ? (
-          <div className="mt-4 rounded-lg border border-red-200 bg-red-50 p-4 text-sm font-medium leading-6 text-red-800">
-            Data belum layak untuk dilanjutkan ke prakarsa. Buat kasus bad data atau lakukan
-            pengkinian terlebih dahulu.
-          </div>
-        ) : (
-          <div className="mt-4 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm font-medium text-emerald-800">
-            Checklist lolos untuk simulasi. Pastikan tetap menggunakan data dummy.
-          </div>
-        )}
+        {showResultNotice ? (
+          failedCritical ? (
+            <div className="mt-4 rounded-lg border border-red-200 bg-red-50 p-4 text-sm font-medium leading-6 text-red-800">
+              Data belum layak untuk dilanjutkan ke prakarsa. Buat kasus bad data atau lakukan
+              pengkinian terlebih dahulu.
+            </div>
+          ) : (
+            <div className="mt-4 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm font-medium text-emerald-800">
+              Checklist lolos untuk simulasi. Pastikan tetap menggunakan data dummy.
+            </div>
+          )
+        ) : null}
 
         <div className="mt-5 flex flex-wrap justify-end gap-2">
           <button
