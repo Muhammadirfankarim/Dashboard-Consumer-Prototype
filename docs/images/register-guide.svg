@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#f1f5f9"/>
+  <rect x="0" y="0" width="245" height="760" fill="#fff" stroke="#dbe4ef"/>
+  <text x="24" y="48" font-family="Arial" font-size="17" font-weight="700" fill="#00529c">BRI KC SUDIRMAN SEMANGGI</text>
+  <rect x="18" y="240" width="210" height="44" rx="8" fill="#00529c"/>
+  <text x="56" y="268" font-family="Arial" font-size="16" font-weight="700" fill="#fff">Bad Data Register</text>
+  <rect x="245" y="0" width="955" height="78" fill="#fff" stroke="#dbe4ef"/>
+  <text x="286" y="30" font-family="Arial" font-size="13" font-weight="700" fill="#00529c">QUICK-WIN BRANCH MONITORING TOOL</text>
+  <text x="286" y="56" font-family="Arial" font-size="22" font-weight="700" fill="#0f172a">BRISpot Bad Data Monitoring &amp; Escalation Dashboard</text>
+
+  <text x="286" y="132" font-family="Arial" font-size="15" font-weight="700" fill="#00529c">BAD DATA REGISTER</text>
+  <text x="286" y="170" font-family="Arial" font-size="30" font-weight="700" fill="#0f172a">Register Monitoring Kasus Bad Data</text>
+  <text x="286" y="200" font-family="Arial" font-size="16" fill="#475569">Dokumentasikan kasus, pantau SLA, PIC, dan catatan eskalasi.</text>
+  <rect x="930" y="142" width="120" height="42" rx="8" fill="#fff" stroke="#cbd5e1"/>
+  <text x="960" y="168" font-family="Arial" font-size="15" font-weight="700" fill="#334155">Export</text>
+  <rect x="1060" y="142" width="130" height="42" rx="8" fill="#00529c"/>
+  <text x="1085" y="168" font-family="Arial" font-size="15" font-weight="700" fill="#fff">Tambah Kasus</text>
+
+  <rect x="286" y="230" width="904" height="118" rx="8" fill="#fff" stroke="#dbe4ef"/>
+  <rect x="310" y="254" width="300" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="326" y="276" font-family="Arial" font-size="14" fill="#64748b">Cari case ID, RM, produk, kategori</text>
+  <rect x="625" y="254" width="150" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="790" y="254" width="150" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="955" y="254" width="150" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="310" y="302" width="320" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="326" y="324" font-family="Arial" font-size="14" fill="#64748b">Issue category filter</text>
+
+  <rect x="286" y="380" width="904" height="280" rx="8" fill="#fff" stroke="#dbe4ef"/>
+  <rect x="286" y="380" width="904" height="42" rx="8" fill="#f8fafc" stroke="#dbe4ef"/>
+  <text x="306" y="406" font-family="Arial" font-size="13" font-weight="700" fill="#64748b">CASE ID</text>
+  <text x="430" y="406" font-family="Arial" font-size="13" font-weight="700" fill="#64748b">RM</text>
+  <text x="540" y="406" font-family="Arial" font-size="13" font-weight="700" fill="#64748b">PRODUK</text>
+  <text x="650" y="406" font-family="Arial" font-size="13" font-weight="700" fill="#64748b">CIF MASKED</text>
+  <text x="790" y="406" font-family="Arial" font-size="13" font-weight="700" fill="#64748b">STATUS</text>
+  <text x="1000" y="406" font-family="Arial" font-size="13" font-weight="700" fill="#64748b">ACTIONS</text>
+  <g stroke="#e2e8f0">
+    <line x1="286" y1="462" x2="1190" y2="462"/>
+    <line x1="286" y1="504" x2="1190" y2="504"/>
+    <line x1="286" y1="546" x2="1190" y2="546"/>
+  </g>
+  <text x="306" y="448" font-family="Arial" font-size="14" fill="#00529c">BD-20260601-0001</text>
+  <text x="430" y="448" font-family="Arial" font-size="14" fill="#334155">RM Demo A</text>
+  <text x="540" y="448" font-family="Arial" font-size="14" fill="#334155">KPR</text>
+  <text x="650" y="448" font-family="Arial" font-size="14" fill="#334155">******0001</text>
+  <text x="790" y="448" font-family="Arial" font-size="14" fill="#334155">Closed</text>
+
+  <rect x="922" y="132" width="268" height="60" rx="6" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <text x="926" y="150" font-family="Arial" font-size="16" font-weight="700" fill="#dc2626">1</text>
+  <rect x="278" y="222" width="912" height="136" rx="6" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <text x="282" y="240" font-family="Arial" font-size="16" font-weight="700" fill="#dc2626">2</text>
+  <rect x="278" y="372" width="912" height="300" rx="6" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <text x="282" y="390" font-family="Arial" font-size="16" font-weight="700" fill="#dc2626">3</text>
+</svg>

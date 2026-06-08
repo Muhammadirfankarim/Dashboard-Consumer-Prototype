@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#f1f5f9"/>
+  <rect x="0" y="0" width="245" height="760" fill="#fff" stroke="#dbe4ef"/>
+  <text x="56" y="368" font-family="Arial" font-size="16" font-weight="700" fill="#00529c">Escalation Generator</text>
+  <rect x="245" y="0" width="955" height="78" fill="#fff" stroke="#dbe4ef"/>
+  <text x="286" y="30" font-family="Arial" font-size="13" font-weight="700" fill="#00529c">QUICK-WIN BRANCH MONITORING TOOL</text>
+  <text x="286" y="56" font-family="Arial" font-size="22" font-weight="700" fill="#0f172a">BRISpot Bad Data Monitoring &amp; Escalation Dashboard</text>
+  <text x="286" y="132" font-family="Arial" font-size="15" font-weight="700" fill="#00529c">ESCALATION GENERATOR</text>
+  <text x="286" y="170" font-family="Arial" font-size="30" font-weight="700" fill="#0f172a">Template Eskalasi OPX/PO</text>
+
+  <rect x="286" y="210" width="310" height="480" rx="8" fill="#fff" stroke="#dbe4ef"/>
+  <text x="314" y="250" font-family="Arial" font-size="18" font-weight="700" fill="#0f172a">Pilih Kasus</text>
+  <rect x="314" y="280" width="250" height="38" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="330" y="304" font-family="Arial" font-size="14" fill="#64748b">Case dropdown</text>
+  <rect x="314" y="340" width="250" height="38" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="330" y="364" font-family="Arial" font-size="14" fill="#64748b">Target: OPX / PO / Unit Data</text>
+  <rect x="314" y="410" width="250" height="120" rx="6" fill="#f8fafc" stroke="#dbe4ef"/>
+  <text x="330" y="442" font-family="Arial" font-size="14" fill="#334155">Produk, RM, CIF masked, Status</text>
+
+  <rect x="626" y="210" width="564" height="480" rx="8" fill="#fff" stroke="#dbe4ef"/>
+  <text x="654" y="250" font-family="Arial" font-size="18" font-weight="700" fill="#0f172a">Template Eskalasi</text>
+  <rect x="980" y="228" width="78" height="34" rx="6" fill="#fff" stroke="#cbd5e1"/>
+  <text x="1004" y="250" font-family="Arial" font-size="14" fill="#334155">Copy</text>
+  <rect x="1068" y="228" width="110" height="34" rx="6" fill="#00529c"/>
+  <text x="1080" y="250" font-family="Arial" font-size="14" font-weight="700" fill="#fff">Mark Escalated</text>
+  <rect x="654" y="285" width="520" height="385" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="676" y="322" font-family="Consolas, monospace" font-size="14" fill="#334155">Subject: Eskalasi Kendala Bad Data BRISpot - ...</text>
+  <text x="676" y="356" font-family="Consolas, monospace" font-size="14" fill="#334155">Case ID, Produk, RM, CIF masked, prioritas...</text>
+  <text x="676" y="390" font-family="Consolas, monospace" font-size="14" fill="#334155">Kronologi, tindakan cabang, bukti pendukung...</text>
+
+  <rect x="306" y="270" width="280" height="260" rx="6" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <text x="310" y="288" font-family="Arial" font-size="16" font-weight="700" fill="#dc2626">1</text>
+  <rect x="646" y="220" width="532" height="56" rx="6" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <text x="650" y="238" font-family="Arial" font-size="16" font-weight="700" fill="#dc2626">2</text>
+  <rect x="646" y="278" width="532" height="400" rx="6" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <text x="650" y="296" font-family="Arial" font-size="16" font-weight="700" fill="#dc2626">3</text>
+</svg>
