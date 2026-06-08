@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 import {
   AlertTriangle,
   BarChart3,
   ClipboardCheck,
-  Database,
   Gauge,
   Menu,
   MessageSquareText,
@@ -18,7 +18,6 @@ import {
 import { AppSidebar } from "@/components/AppSidebar";
 import { useRole } from "@/components/RoleProvider";
 import { ROLE_OPTIONS } from "@/types";
-import { useData } from "@/components/DataProvider";
 import { cn } from "@/lib/utils";
 
 const mobileNav = [
@@ -32,7 +31,6 @@ const mobileNav = [
 
 export function AppShell({ children }: { children: ReactNode }) {
   const { role, setRole } = useRole();
-  const { storageMode } = useData();
   const pathname = usePathname();
   const showPrivacyNotice = !pathname.startsWith("/settings");
 
@@ -51,6 +49,13 @@ export function AppShell({ children }: { children: ReactNode }) {
                 >
                   <Menu className="h-5 w-5" />
                 </Link>
+                <Image
+                  src="/brispot-consumer-logo.png"
+                  alt="BRISpot Consumer"
+                  width={48}
+                  height={48}
+                  className="hidden h-12 w-12 shrink-0 rounded-lg object-cover ring-1 ring-slate-200 sm:block"
+                />
                 <div className="min-w-0">
                   <p className="text-xs font-semibold uppercase tracking-wide text-bri-blue">
                     Quick-win branch monitoring tool
@@ -61,10 +66,6 @@ export function AppShell({ children }: { children: ReactNode }) {
                 </div>
               </div>
               <div className="flex shrink-0 items-center gap-2">
-                <div className="hidden items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-medium text-slate-600 sm:flex">
-                  <Database className="h-4 w-4 text-bri-blue" />
-                  {storageMode === "supabase" ? "Supabase" : "Demo mode"}
-                </div>
                 <label className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm">
                   <ShieldCheck className="h-4 w-4 text-bri-blue" />
                   <span className="hidden text-slate-600 sm:inline">Role</span>
