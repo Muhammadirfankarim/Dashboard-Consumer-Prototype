@@ -34,6 +34,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const { role, setRole } = useRole();
   const { storageMode } = useData();
   const pathname = usePathname();
+  const showPrivacyNotice = !pathname.startsWith("/settings");
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-950">
@@ -81,15 +82,17 @@ export function AppShell({ children }: { children: ReactNode }) {
                 </label>
               </div>
             </div>
-            <div className="border-t border-amber-200 bg-amber-50 px-4 py-2 text-xs text-amber-900 lg:px-6">
-              <div className="flex items-center gap-2">
-                <AlertTriangle className="h-4 w-4 shrink-0" />
-                <span>
-                  Gunakan data dummy. Jangan memasukkan CIF, nama, atau nomor HP nasabah asli
-                  pada MVP ini.
-                </span>
+            {showPrivacyNotice ? (
+              <div className="border-t border-amber-200 bg-amber-50 px-4 py-2 text-xs text-amber-900 lg:px-6">
+                <div className="flex items-center gap-2">
+                  <AlertTriangle className="h-4 w-4 shrink-0" />
+                  <span>
+                    Gunakan data dummy. Jangan memasukkan CIF, nama, atau nomor HP nasabah asli
+                    pada MVP ini.
+                  </span>
+                </div>
               </div>
-            </div>
+            ) : null}
             <nav className="flex gap-2 overflow-x-auto border-t border-slate-200 bg-white px-4 py-2 lg:hidden">
               {mobileNav.map((item) => {
                 const Icon = item.icon;
