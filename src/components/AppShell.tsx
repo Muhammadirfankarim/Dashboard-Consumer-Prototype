@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import {
   AlertTriangle,
   BarChart3,
@@ -11,6 +11,7 @@ import {
   Gauge,
   Menu,
   MessageSquareText,
+  PanelLeftOpen,
   Settings,
   ShieldCheck,
   Table2
@@ -33,15 +34,39 @@ export function AppShell({ children }: { children: ReactNode }) {
   const { role, setRole } = useRole();
   const pathname = usePathname();
   const showPrivacyNotice = !pathname.startsWith("/settings");
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+  useEffect(() => {
+    const savedValue = window.localStorage.getItem("brispot-sidebar-collapsed");
+    setSidebarCollapsed(savedValue === "true");
+  }, []);
+
+  function updateSidebarCollapsed(value: boolean) {
+    setSidebarCollapsed(value);
+    window.localStorage.setItem("brispot-sidebar-collapsed", String(value));
+  }
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-950">
       <div className="flex min-h-screen">
-        <AppSidebar />
+        {sidebarCollapsed ? null : (
+          <AppSidebar onCollapse={() => updateSidebarCollapsed(true)} />
+        )}
         <div className="min-w-0 flex-1">
           <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
             <div className="flex min-h-16 items-center justify-between gap-3 px-4 py-3 lg:px-6">
               <div className="flex min-w-0 items-center gap-3">
+                {sidebarCollapsed ? (
+                  <button
+                    type="button"
+                    onClick={() => updateSidebarCollapsed(false)}
+                    className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:bg-slate-50 hover:text-bri-blue lg:inline-flex"
+                    aria-label="Tampilkan sidebar"
+                    title="Tampilkan sidebar"
+                  >
+                    <PanelLeftOpen className="h-5 w-5" />
+                  </button>
+                ) : null}
                 <Link
                   href="/dashboard/"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-bri-blue text-white lg:hidden"

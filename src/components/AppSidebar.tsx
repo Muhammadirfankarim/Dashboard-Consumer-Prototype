@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   BarChart3,
+  ChevronLeft,
   ClipboardCheck,
   Gauge,
   Lock,
@@ -23,7 +24,11 @@ const navItems = [
   { href: "/settings/", label: "Settings", icon: Settings, viewer: false }
 ];
 
-export function AppSidebar() {
+type AppSidebarProps = {
+  onCollapse: () => void;
+};
+
+export function AppSidebar({ onCollapse }: AppSidebarProps) {
   const pathname = usePathname();
   const { role } = useRole();
 
@@ -31,12 +36,25 @@ export function AppSidebar() {
     <aside className="hidden w-72 shrink-0 border-r border-slate-200 bg-white lg:block">
       <div className="flex h-full flex-col">
         <div className="border-b border-slate-200 px-6 py-5">
-          <div className="text-sm font-semibold uppercase tracking-wide text-bri-blue">
-            BRI KC Sudirman Semanggi
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <div className="text-sm font-semibold uppercase tracking-wide text-bri-blue">
+                BRI KC Sudirman Semanggi
+              </div>
+              <h1 className="mt-2 text-xl font-bold leading-7 text-slate-950">
+                BRISpot Bad Data Monitoring
+              </h1>
+            </div>
+            <button
+              type="button"
+              onClick={onCollapse}
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-bri-blue"
+              aria-label="Sembunyikan sidebar"
+              title="Sembunyikan sidebar"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
           </div>
-          <h1 className="mt-2 text-xl font-bold leading-7 text-slate-950">
-            BRISpot Bad Data Monitoring
-          </h1>
         </div>
         <nav className="flex-1 space-y-1 px-3 py-4">
           {navItems.map((item) => {
